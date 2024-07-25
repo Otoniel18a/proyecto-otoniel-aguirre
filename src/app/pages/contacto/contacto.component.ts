@@ -25,15 +25,15 @@ export class ContactoComponent implements OnInit {
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([13.6983, -89.1890], 13); // Coordenadas y nivel de zoom
+    this.map = L.map('map').setView([14.0887448, -87.1891958], 15); // Coordenadas y nivel de zoom
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
 
-    L.marker([13.6983, -89.1890]) // Coordenadas del marcador
+    L.marker([14.0887448, -87.1891958]) // Coordenadas del marcador
       .addTo(this.map)
-      .bindPopup('Ubicación de la institución')
+      .bindPopup('Centro Civico Gubernamental') // Contenido del popup
       .openPopup();
   }
   onSubmit(): void {
