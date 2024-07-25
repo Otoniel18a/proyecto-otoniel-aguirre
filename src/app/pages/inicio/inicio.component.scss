@@ -1,0 +1,72 @@
+main.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    width: 100%;
+    max-width: 1400px; /* Ajusta el ancho máximo del contenedor principal */
+    margin: 40px 0; /* Margen para separar el contenido del header y footer */
+  }
+  
+  .content {
+    flex: 3;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo del contenido */
+  }
+  
+  .content article {
+    margin-bottom: 2rem;
+  }
+  
+  .content img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .sidebar {
+    flex: 1;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 20px; /* Margen entre el contenido y la barra lateral */
+    width: 100%;
+    max-width: 300px; /* Limita el ancho máximo de la barra lateral */
+  }
+  
+  .sidebar .widget {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #59D0E1;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .denuncias {
+    margin-top: 1rem;
+    background-color: azure;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .denuncias img {
+    width: 100%;
+    max-width: 300px;
+    height: 100px;
+  }
+  
+  .parrafo {
+    text-align: center;
+    color: #3c536b;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
