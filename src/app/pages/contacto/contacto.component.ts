@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-contacto',
@@ -8,31 +9,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactoComponent implements OnInit {
   contactForm: FormGroup;
+  private map!: L.Map;
 
-  constructor(private fb: FormBuilder) { 
-    // Inicializamos el form aquí para evitar el error de inicialización.
+  constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      nombre: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      asunto: [''],
-      mensaje: ['']
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      subject: [''],
+      message: ['']
     });
   }
 
   ngOnInit(): void {
-    // Inicializamos el form también aquí para asegurarnos que está configurado en ngOnInit.
-    this.contactForm = this.fb.group({
-      nombre: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      asunto: [''],
-      mensaje: ['']
-    });
+    this.initMap();
   }
 
+  private initMap(): void {
+    this.map = L.map('map').setView([13.6983, -89.1890], 13); // Coordenadas y nivel de zoom
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(this.map);
+
+    L.marker([13.6983, -89.1890]) // Coordenadas del marcador
+      .addTo(this.map)
+      .bindPopup('Ubicación de la institución')
+      .openPopup();
+  }
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-      // Aquí puedes manejar el envío del formulario, por ejemplo, enviarlo a un servidor.
+      console.log('Formulario enviado', this.contactForm.value);
     }
   }
 }

@@ -1,46 +1,98 @@
-.contact-form-container {
-    max-width: 600px;
-    margin: 0 auto;
+@import "~leaflet/dist/leaflet.css";
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-space, .footer-space {
+    height: 50px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
   }
   
   .form-group {
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+  
+      &:focus {
+        border-color: #007bff;
+      }
+    }
+  
+    .is-invalid {
+      border-color: #dc3545;
+  
+      &:focus {
+        border-color: #dc3545;
+      }
+    }
+  
+    .error-message {
+      margin-top: 0.5rem;
+      color: #dc3545;
+      font-size: 0.875rem;
+    }
   }
   
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  
-  .form-group .form-control {
-    width: 100%;
+  button {
     padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form-group .error {
-    color: red;
-    margin-top: 0.5rem;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
     border: none;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
     font-size: 1rem;
-  }
+    cursor: pointer;
+    transition: background-color 0.3s;
   
-  .btn-primary:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+    &:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .map-container {
+        width: 80%; /* Ajusta el ancho según sea necesario */
+        max-width: 800px; /* Establece un ancho máximo */
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+        padding: 1rem; /* Espaciado interno opcional */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: añade una sombra */
+        border-radius: 8px; /* Opcional: añade bordes redondeados */
+      }
+      
+      #map {
+        height: 400px; /* Ajusta la altura según sea necesario */
+        width: 100%; /* Hace que el mapa se ajuste al ancho del contenedor */
+      }
   }
   
