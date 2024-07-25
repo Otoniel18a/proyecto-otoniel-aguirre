@@ -1,1 +1,32 @@
-<p>contacto works!</p>
+<div class="contact-form-container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" formControlName="nombre" type="text" class="form-control" />
+        <div *ngIf="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched" class="error">
+          El nombre es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="correo">Correo</label>
+        <input id="correo" formControlName="correo" type="email" class="form-control" />
+        <div *ngIf="contactForm.get('correo')?.invalid && contactForm.get('correo')?.touched" class="error">
+          <div *ngIf="contactForm.get('correo')?.errors?.['required']">El correo es obligatorio.</div>
+          <div *ngIf="contactForm.get('correo')?.errors?.['email']">El correo no es válido.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="asunto">Asunto</label>
+        <input id="asunto" formControlName="asunto" type="text" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" formControlName="mensaje" class="form-control"></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar</button>
+    </form>
+  </div>
