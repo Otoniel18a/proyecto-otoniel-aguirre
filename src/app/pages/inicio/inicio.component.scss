@@ -1,72 +1,222 @@
-main.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
-    width: 100%;
-    max-width: 1400px; /* Ajusta el ancho máximo del contenedor principal */
-    margin: 40px 0; /* Margen para separar el contenido del header y footer */
+@import "~leaflet/dist/leaflet.css";
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header-space, .footer-space {
+  height: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
   }
-  
-  .content {
-    flex: 3;
-    padding: 1rem;
-    width: 100%;
-    max-width: 800px; /* Ajusta el ancho máximo del contenido */
+
+  input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff;
+    }
   }
-  
-  .content article {
-    margin-bottom: 2rem;
+
+  .is-invalid {
+    border-color: #dc3545;
+
+    &:focus {
+      border-color: #dc3545;
+    }
   }
-  
-  .content img {
+
+  .error-message {
+    margin-top: 0.5rem;
+    color: #dc3545;
+    font-size: 0.875rem;
+  }
+}
+
+button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+}
+
+/* Estilos para la página de inicio */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  width: 100%;
+  max-width: 1400px; 
+  margin: 40px 0;
+}
+
+.content {
+  flex: 3;
+  padding: 1rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.content article {
+  margin-bottom: 2rem;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 20px; 
+  width: 100%;
+  max-width: 300px;
+}
+
+.sidebar .widget {
+  margin-bottom: 1rem;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #59D0E1;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.denuncias {
+  margin-top: 1rem;
+  background-color: azure;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+.denuncias img {
+  width: 100%;
+  max-width: 300px;
+  height: 100px;
+}
+
+.parrafo {
+  text-align: center;
+  color: #3c536b;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content, .sidebar {
     max-width: 100%;
+  }
+
+  .sidebar {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .denuncias img {
     height: auto;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0.5rem;
+  }
+
   .sidebar {
-    flex: 1;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 15px;
-    margin-left: 20px; /* Margen entre el contenido y la barra lateral */
-    width: 100%;
-    max-width: 300px; /* Limita el ancho máximo de la barra lateral */
+    padding: 0.5rem;
   }
-  
-  .sidebar .widget {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar button {
-    width: 100%;
-    padding: 1rem;
-    background-color: #59D0E1;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-  }
-  
+
   .denuncias {
-    margin-top: 1rem;
-    background-color: azure;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
+    padding: 10px;
   }
-  
-  .denuncias img {
-    width: 100%;
-    max-width: 300px;
-    height: 100px;
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
   }
-  
-  .parrafo {
-    text-align: center;
-    color: #3c536b;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+
+  form {
+    padding: 0;
   }
-  
-  
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    input, textarea {
+      font-size: 0.875rem;
+      padding: 0.5rem;
+    }
+  }
+
+  button {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .main-content {
+    margin: 20px 0;
+  }
+
+  .denuncias {
+    padding: 5px;
+  }
+}
