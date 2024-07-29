@@ -1,87 +1,3 @@
-@import "~leaflet/dist/leaflet.css";
-
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-.header-space, .footer-space {
-  height: 50px;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-form {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-
-  label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  input, textarea {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-
-    &:focus {
-      border-color: #007bff;
-    }
-  }
-
-  .is-invalid {
-    border-color: #dc3545;
-
-    &:focus {
-      border-color: #dc3545;
-    }
-  }
-
-  .error-message {
-    margin-top: 0.5rem;
-    color: #dc3545;
-    font-size: 0.875rem;
-  }
-}
-
-button {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-
-  &:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-  }
-}
-
 /* Estilos para la página de inicio */
 .main-content {
   display: flex;
@@ -140,12 +56,64 @@ button {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 300px;
+  text-align: center; // Centra el contenido de denuncias
 }
 
 .denuncias img {
   width: 100%;
   max-width: 300px;
   height: 100px;
+}
+
+.denuncias1 {
+  margin-top: 1rem;
+  background-color: azure;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: center; // Centra el contenido de denuncias1
+
+  .titulo {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  img {
+    max-width: 50%;
+    max-width: 100px;
+    height: 50%; // Ajusta la altura de la imagen
+  }
+}
+
+.denuncias2 {
+  margin-top: 1rem;
+  background-color: azure;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: center; 
+
+  .titulo {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+}
+
+.denuncias3 {
+  margin-top: 1rem;
+  background-color: azure;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: center; 
 }
 
 .parrafo {
@@ -170,7 +138,8 @@ button {
     margin-top: 20px;
   }
 
-  .denuncias img {
+  .denuncias img,
+  .denuncias1 img {
     height: auto;
   }
 }
@@ -184,7 +153,10 @@ button {
     padding: 0.5rem;
   }
 
-  .denuncias {
+  .denuncias,
+  .denuncias1,
+  .denuncias2,
+  .denuncias3 {
     padding: 10px;
   }
 }
@@ -216,7 +188,10 @@ button {
     margin: 20px 0;
   }
 
-  .denuncias {
+  .denuncias,
+  .denuncias1,
+  .denuncias2,
+  .denuncias3 {
     padding: 5px;
   }
 }
