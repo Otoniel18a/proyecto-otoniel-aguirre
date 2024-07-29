@@ -1,6 +1,5 @@
 @import "~leaflet/dist/leaflet.css";
 
-
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -121,8 +120,21 @@ button {
     }
 }
 
+// Custom Alert Styles
+.custom-alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    font-size: 1rem;
+}
+
 // Media Queries
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .content {
         flex-direction: column;
     }
@@ -131,9 +143,27 @@ button {
         width: 100%;
         max-width: none; // Elimina el límite máximo de ancho en pantallas más pequeñas
     }
+}
 
-    .map-info {
-        margin-top: 2rem;
+@media (max-width: 768px) {
+    header {
+        .banner {
+            height: 200px;
+        }
+
+        .nav ul {
+            flex-direction: column;
+            align-items: flex-start;
+
+            li {
+                margin: 5px 0;
+                width: 100%; 
+            }
+        }
+    }
+
+    .custom-alert {
+        font-size: 0.875rem;
     }
 }
 

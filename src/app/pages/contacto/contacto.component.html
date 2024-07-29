@@ -1,54 +1,59 @@
 <main class="main-content">
-<div class="contact-container">
-    <div class="header-space"></div>
-    <h2>Contacto</h2>
-    <div class="content">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input id="name" formControlName="name" [class.is-invalid]="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" />
-                <div *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="error-message">
-                    <small *ngIf="contactForm.controls['name'].errors?.['required']">El nombre es obligatorio.</small>
+    <div class="contact-container">
+        <div class="header-space"></div>
+        <h2>Contacto</h2>
+
+        <div *ngIf="formSubmitted" class="custom-alert">
+            El formulario se ha enviado correctamente.
+        </div>
+
+        <div class="content">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input id="name" formControlName="name" [class.is-invalid]="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" />
+                    <div *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="error-message">
+                        <small *ngIf="contactForm.controls['name'].errors?.['required']">El nombre es obligatorio.</small>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="email">Correo</label>
-                <input id="email" formControlName="email" [class.is-invalid]="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" />
-                <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
-                    <small *ngIf="contactForm.controls['email'].errors?.['required']">El correo es obligatorio.</small>
-                    <small *ngIf="contactForm.controls['email'].errors?.['email']">Formato de correo inválido.</small>
+                <div class="form-group">
+                    <label for="email">Correo</label>
+                    <input id="email" formControlName="email" [class.is-invalid]="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" />
+                    <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="error-message">
+                        <small *ngIf="contactForm.controls['email'].errors?.['required']">El correo es obligatorio.</small>
+                        <small *ngIf="contactForm.controls['email'].errors?.['email']">Formato de correo inválido.</small>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="subject">Asunto</label>
-                <input id="subject" formControlName="subject" [class.is-invalid]="contactForm.controls['subject'].invalid && contactForm.controls['subject'].touched" />
-            </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input id="subject" formControlName="subject" [class.is-invalid]="contactForm.controls['subject'].invalid && contactForm.controls['subject'].touched" />
+                </div>
 
-            <div class="form-group">
-                <label for="message">Mensaje</label>
-                <textarea id="message" formControlName="message" [class.is-invalid]="contactForm.controls['message'].invalid && contactForm.controls['message'].touched"></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" formControlName="message" [class.is-invalid]="contactForm.controls['message'].invalid && contactForm.controls['message'].touched"></textarea>
+                </div>
 
-            <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
-        </form>
+                <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+            </form>
 
-        <div class="map-info">
-            <div id="map" style="height: 400px; width: 100%;"></div>
-            <div class="info">
-                <h3>Dirección:</h3>
-                <p>Cuerpo Bajo B, Centro Cívico Gubernamental José Cecilio del Valle, Boulevard Juan Pablo II. Tegucigalpa M.D.C. Honduras.</p>
-                <h3>Horario de Atención al Ciudadano:</h3>
-                <p>Lunes a Viernes de 8:00 a.m. a 4:00 p.m.</p>
-                <h3>Teléfonos:</h3>
-                <p></p>
-                <h3>Fax:</h3>
-                <p></p>
-                <h3>Correo Electrónico:</h3>
-                <p>info@trabajo.gob.hn</p>
+            <div class="map-info">
+                <div id="map" style="height: 400px; width: 100%;"></div>
+                <div class="info">
+                    <h3>Dirección:</h3>
+                    <p>Cuerpo Bajo B, Centro Cívico Gubernamental José Cecilio del Valle, Boulevard Juan Pablo II. Tegucigalpa M.D.C. Honduras.</p>
+                    <h3>Horario de Atención al Ciudadano:</h3>
+                    <p>Lunes a Viernes de 8:00 a.m. a 4:00 p.m.</p>
+                    <h3>Teléfonos:</h3>
+                    <p></p>
+                    <h3>Fax:</h3>
+                    <p></p>
+                    <h3>Correo Electrónico:</h3>
+                    <p>info@trabajo.gob.hn</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>

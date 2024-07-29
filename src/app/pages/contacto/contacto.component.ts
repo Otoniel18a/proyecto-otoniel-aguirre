@@ -10,6 +10,7 @@ import * as L from 'leaflet';
 export class ContactoComponent implements OnInit {
   contactForm: FormGroup;
   private map!: L.Map;
+  formSubmitted: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -36,9 +37,14 @@ export class ContactoComponent implements OnInit {
       .bindPopup('Centro Civico Gubernamental') // Contenido del popup
       .openPopup();
   }
+
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Formulario enviado', this.contactForm.value);
+        console.log('Formulario enviado', this.contactForm.value);
+        this.formSubmitted = true;
+        this.contactForm.reset(); 
+        setTimeout(() => this.formSubmitted = false, 3000);
     }
-  }
+}
+
 }

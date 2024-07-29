@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { CaftaComponent } from './pages/cafta/cafta.component';
 import { OrganizacionComponent } from './pages/organizacion/organizacion.component';
+import { OrganizacionService } from './services/organizacion.service';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +33,11 @@ import { OrganizacionComponent } from './pages/organizacion/organizacion.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [OrganizacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

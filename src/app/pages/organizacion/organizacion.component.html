@@ -1,1 +1,14 @@
-<p>organizacion works!</p>
+<main class="main-content">
+    <div class="content-container">
+      <h2>Te puedes abocar a las siguientes personas para mas información </h2>
+      <div class="user-list">
+        <div class="user-card" *ngFor="let user of users">
+          <h3>{{ user.name }}</h3>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone:</strong> {{ user.phone }}</p>
+          <p><strong>Company:</strong> {{ user.company.name }}</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
