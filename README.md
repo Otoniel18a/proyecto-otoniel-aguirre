@@ -1,27 +1,59 @@
-# ProyectoAguirre
+# Proyecto de Otoniel Aguirre en Angular
+El proyecto es una recreación de la pagina de la secretaria en angular en la cual podemos encontrar 5 paginas las cuales son:
+Inicio
+Quienes somos
+Contacto
+Cafta
+Organización
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Descripción de las Páginas
 
-## Development server
+- **Inicio**: Página principal con una visión general del sitio.
+- **Quienes Somos**: Información sobre la historia y la misión de la secretaría.
+- **Contacto**: Formulario de contacto y detalles para comunicarse con la secretaría y la ubicación de la misma.
+- **Cafta**: Información sobre el tratado CAFTA y su impacto.
+- **Organización**: Detalles sobre la estructura organizacional y los miembros clave.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: Angular CLI: 13.3.11
+- **Node**: Node: 18.16.0 (Unsupported)
+- **Package Manager**: npm 9.5.1
+- **RxJS**: Para manejo de eventos y streams
+- **HttpClient**: Para hacer peticiones a APIs
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clona el repositorio**:
 
-## Running unit tests
+    ```bash
+    git clone https://github.com/Otoniel18a/proyecto-otoniel-aguirre.git
+    cd proyecto-otoniel-aguirre.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Instala las dependencias**:
 
-## Running end-to-end tests
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Uso
 
-## Further help
+Para iniciar el servidor de desarrollo:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve
+
+## Contacto
+
+Para más información o preguntas, puedes contactarme a través de:
+
+- **Email**: otoniel18@gmail.com
+- **GitHub**: [Otoniel18a](https://github.com/Otoniel18a)
+
+## Otros Recursos
+
+- [Documentación de Angular](https://angular.io/docs)
+- [Bootstrap](https://getbootstrap.com/)
+- [RxJS](https://rxjs.dev/)
