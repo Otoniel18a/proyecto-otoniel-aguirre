@@ -1,0 +1,77 @@
+/* Estilos generales */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 1024px;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+  
+    p, ul {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+  
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 1024px) {
+    .content {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  
+    .section h2 {
+      font-size: 1.4rem;
+    }
+  
+    .section p, .section ul {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      padding: 0.5rem;
+    }
+  
+    .section h2 {
+      font-size: 1.3rem;
+    }
+  
+    .section p, .section ul {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      padding: 0.25rem;
+    }
+  
+    .section h2 {
+      font-size: 1.2rem;
+    }
+  
+    .section p, .section ul {
+      font-size: 0.85rem;
+    }
+  }
+  
